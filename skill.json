@@ -1,0 +1,34 @@
+{
+  "name": "genpark-personal-agent-flight-layover-micro-itinerary-synthesizer-skill",
+  "version": "1.0.0",
+  "description": "Personal Agent Flight Layover Micro-Itinerary Synthesizer. Evaluates airport layover time budgets (3-8 hours), factors immigration clearance buffers, round-trip metro/taxi latencies, and curates timed sightseeing/culinary micro-tours with zero connection risk.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "synthesize_layover_tour",
+      "description": "Generate guaranteed zero-missed-flight micro-itinerary during international layovers.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "airport_code": {
+            "type": "string",
+            "description": "Transit airport code (e.g. HND, SIN, AMS, ICN)."
+          },
+          "layover_minutes": {
+            "type": "integer",
+            "description": "Total layover duration in minutes."
+          },
+          "traveler_preferences": {
+            "type": "object",
+            "description": "Pace (RELAXED, ACTIVE), focus (FOOD, SIGHTSEEING), luggage_stored (bool)."
+          }
+        },
+        "required": [
+          "airport_code",
+          "layover_minutes"
+        ]
+      }
+    }
+  ]
+}
